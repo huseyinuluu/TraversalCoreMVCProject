@@ -1,0 +1,79 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html class="loading" lang="en" data-textdirection="ltr">
+
+@await Component.InvokeAsync("_MemberLayoutHead")
+
+<body class="vertical-layout vertical-menu 2-columns   menu-expanded fixed-navbar" data-open="click" data-menu="vertical-menu" data-color="bg-gradient-x-purple-blue" data-col="2-columns">
+
+    <!-- fixed-top-->
+    <nav class="header-navbar navbar-expand-md navbar navbar-with-menu navbar-without-dd-arrow fixed-top navbar-semi-light">
+        <div class="navbar-wrapper">
+            <div class="navbar-container content">
+                <div class="collapse navbar-collapse show" id="navbar-mobile">
+                    <ul class="nav navbar-nav mr-auto float-left">
+                        <li class="nav-item dropdown navbar-search">
+                            <a class="nav-link dropdown-toggle hide" data-toggle="dropdown" href="#"><i class="ficon ft-search"></i></a>
+                            <ul class="dropdown-menu">
+                                <li class="arrow_box">
+                                    <form>
+                                        <div class="input-group search-box">
+                                            <div class="position-relative has-icon-right full-width">
+                                                <input class="form-control" id="search" type="text" placeholder="Ara...">
+                                                <div class="form-control-position navbar-search-close"><i class="ft-x">   </i></div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    @await Component.InvokeAsync("_MemberLayoutLanguages")
+
+
+                    @await Component.InvokeAsync("_MemberLayoutRightBar")
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ////////////////////////////////////////////////////////////////////////////-->
+
+
+    @await Component.InvokeAsync("_MemberLayoutSideBar")
+
+
+    <div class="app-content content">
+        <div class="content-wrapper">
+            <div class="content-wrapper-before"></div>
+
+
+            @await Component.InvokeAsync("_MemberLayoutHeaderContent")
+
+            <div class="content-body">
+
+                @RenderBody()
+
+            </div>
+        </div>
+    </div>
+    <!-- ////////////////////////////////////////////////////////////////////////////-->
+
+
+    @await Component.InvokeAsync("_MemberLayoutFooter")
+
+
+    <script src="~/Member/theme-assets/vendors/js/vendors.min.js" type="text/javascript"></script>
+    <script src="~/Member/theme-assets/js/core/app-menu-lite.js" type="text/javascript"></script>
+    <script src="~/Member/theme-assets/js/core/app-lite.js" type="text/javascript"></script>
+
+</body>
+</html>

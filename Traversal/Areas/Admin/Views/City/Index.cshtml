@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<script src="~/lib/jquery/dist/jquery.min.js"></script><br />
+<h2 class="text-center">Şehir İşlemleri</h2>
+<br />
+<button type="button" id="btngetlist" class="btn btn-outline-info col-md-2">Şehir Listesi</button>
+<button type="button" id="btnaddcity" class="btn btn-outline-secondary col-md-2">Şehir Listesi</button>
+<button type="button" id="btnupdatecity" class="btn btn-outline-primary col-2">Şehir Listesi</button>
+<button type="button" id="btndeletecity" class="btn btn-outline-warning col-2">Şehir Listesi</button>
+<br />
+<br />
+
+
+<div id="citylist">
+    Şehir Listesi
+</div>
+<script>
+    $("#btngetlist").click(function () {
+        $.ajax({
+            contentType: "application/json",
+            dataType: "json",
+            type: "Get",
+            url: "/Admin/City/CityList",
+            success: function (func) {
+                let w = jQuery.parseJSON(func);
+                console.log(w);
+                let tablehtml = "<table class= table table-bordered> <tr><th>Şehir</th> <th>Durum</th></tr>";
+                $.each(w, (index, value) => {
+                    tablehtml += `<tr><td>${value.City}</td>
+                        <td>${value.Status}</td>`
+                });
+                tablehtml += "</table>";
+                $("#citylist").html(tablehtml);
+            }
+
+        });
+    });
+
+    $("#btnaddcity").click(function () {
+
+        let cityvalues = {
+
+        }
+
+        $.ajax({
+           
+        })
+    })
+</script>

@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\Giresun\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Giresun\\.nuget\\packages"
+    ]
+  }
+}

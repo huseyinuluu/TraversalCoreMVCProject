@@ -1,0 +1,36 @@
+﻿@using EntityKatman.concrete
+@model List<Visit>
+@{
+    ViewData["Title"] = "LastVisitUser";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int sayac = 0;
+}
+<br />
+<br />
+<br />
+
+<h1 class="mx-auto">Kullanıcının Geçmiş Ziyaretleri</h1>
+<table class="table text-center">
+    <tr>
+        <th>#</th>
+        <th>Ziyaretçi Ad Soyad</th>
+        <th>Şehir</th>
+        <th>Kişi Sayısı</th>
+        <th>Tarih</th>
+        <th>Detaylar</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+
+        <tr>
+            @{sayac += 1; }
+            <td>@sayac</td>
+            <td>###</td>
+            <td>@item.Destination.City</td>
+            <td>@item.PersonCount</td>
+            <td>@(((DateTime)item.VisitDate).ToString("dd-MMM-yyyy"))
+            </td>            
+            <td><a href="#" class="btn btn-outline-primary">Detaylar</a></td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,41 @@
+﻿@model EntityKatman.concrete.Destination
+@{
+    ViewData["Title"] = "AddDestination";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h1 class="text-center">Rota Ekle</h1>
+<form method="post" class="col-11 mx-auto">
+    <div class="form-group">
+        @Html.Label("Şehir")
+        <input type="text" asp-for="City" class="form-control" />
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.Label("Tarih")
+        <input type="text" asp-for="DayTimes" placeholder="GG/AA/YYYY" class="form-control" />
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.Label("Rota Görsel")
+        <input type="text" asp-for="Image" class="form-control" /> <br />
+        @Html.Label("Rota Görsel 2")
+        <input type="text" asp-for="Image2" class="form-control" /><br />
+        @Html.Label("Kapak Görseli")
+        <input type="text" asp-for="CoverImage" class="form-control" />
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.Label("Kapasite")
+        <input type="text" asp-for="Capacity" class="form-control" />
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.Label("Detay")
+        <textarea cols="30" rows="5" asp-for="Details1" class="form-control"></textarea>
+    </div>
+    <br />
+    <button class="btn btn-outline-primary">Oluştur</button>
+</form>
+

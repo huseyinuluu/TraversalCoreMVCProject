@@ -1,0 +1,39 @@
+﻿@using EntityKatman.concrete
+@model List<Destination>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int sayac = 0;
+}
+
+
+<h1 class="text-center">Tur Rotaları</h1>
+<table class="table text-center">
+    <tr>
+        <th>#</th>
+        <th>Şehİr</th>
+        <th>Kapasİte</th>
+        <th>Sİtede Gör</th>
+        <th>Sİl</th>
+        <th>Güncelle</th>
+    </tr>
+
+    @foreach (var item in Model)
+
+    {
+<tr>
+    @{sayac = @sayac + 1;}
+    <td>@sayac</td>
+    <td>@item.City</td>
+    <td>@item.Capacity</td>
+    <td><a href="/Destination/DestinationDetails/@item.DestinationID" class="btn btn-outline-info">Sitede Gör</a></td>
+    @*Dosya Konumu*@
+    @*c:\users\giresun\source\repos\huzurbahcesiprojesi\HuzurBahcesiProjesi\Areas\Admin\Controllers\DestinationController.cs*@
+    <td><a href="/Admin/Destination/DeleteDestination/@item.DestinationID" class="btn btn-outline-danger">Sil</a></td>
+    <td><a href="/Admin/Destination/UpdateDestination/@item.DestinationID" class="btn btn-outline-success">Güncelle</a></td>
+
+</tr>
+    }
+</table>
+<a href="/Admin/Destination/AddDestination" class="btn btn-outline-primary col-9 mx-auto">Yeni Kayıt</a> 
+
